@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/airbenders/when2meet/domain"
-	"github.com/airbenders/when2meet/when2meet/repository"
+	"github.com/airbenders/when2meet/repository"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 
