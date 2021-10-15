@@ -24,9 +24,9 @@ end_Time integer
 
 create table Availibilities(
 AID VARCHAR(10) primary	key not null,
-PDay VARCHAR(10),
-start_Time integer,
-end_Time integer
+SID VARCHAR(10),
+ADAY VARCHAR(10),
+Times integer[2]
 );
 
 -- DROP TABLE Availibilities;

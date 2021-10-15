@@ -11,16 +11,18 @@ import (
 
 func main() {
 
-	connectionstr := "user=postgres dbname=when2meet password=Team7SOEN363 host=local sslmode=disable"
+	connectionstr := "postgres://postgres:password@localhost/postgres"
 	pool, err := pgxpool.Connect(context.Background(), connectionstr)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	repository := repository.NewWhen2meetRepository(pool)
-	when2meet := &domain.When2meet{
-		W2M_ID:   "1994",
-		W2M_name: "meetings",
+	repository := repository.NewAvailibilitiesRepository(pool)
+	availibilities := &domain.Availibilities{
+		AID:   "1994",
+		SID:   "meetings",
+		ADAY:  "Monday",
+		Times: [2]int{10, 12},
 	}
-	repository.Create(context.Background(), when2meet.W2M_ID, when2meet)
+	repository.Create(context.Background(), availibilities.AID, availibilities)
 
 }
